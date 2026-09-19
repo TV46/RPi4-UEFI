@@ -30,9 +30,6 @@ jobs:
         sudo apt update
         sudo apt install acpica-tools gcc-aarch64-linux-gnu uuid-dev
 
-    - name: Check out RPi4 repository
-      uses: actions/checkout@v7
-
     - name: Check out latest EDK2
       run: |
         git clone --recursive https://github.com/tianocore/edk2.git edk2
