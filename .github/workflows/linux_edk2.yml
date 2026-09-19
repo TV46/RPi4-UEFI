@@ -83,7 +83,6 @@ jobs:
           build -a ${{ env.ARCH }} -t ${{ env.COMPILER }} -b $BUILD_TYPE -p edk2-platforms/Platform/RaspberryPi/RPi4/RPi4.dsc --pcd gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVendor=L"${{ env.PROJECT_URL }}" --pcd gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVersionString=L"UEFI Firmware ${{steps.set_version.outputs.version}}" ${BUILD_FLAGS} ${DEFAULT_KEYS} ${TLS_DISABLE_FLAGS}
           TLS_DISABLE_FLAGS=""
         done
-        cp Build/RPi4/RELEASE_${{ env.COMPILER }}/FV/RPI_EFI.fd .
 
     - name: Upload UEFI firmware artifacts
       uses: actions/upload-artifact@v7
