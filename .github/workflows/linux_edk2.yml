@@ -36,9 +36,15 @@ jobs:
     - name: Check out latest EDK2
       run: |
         git clone --recursive https://github.com/tianocore/edk2.git edk2
-        cd edk2
-        git submodule update --init --recursive
 
+    - name: Check out latest EDK2 Platforms
+      run: |
+        git clone --recursive https://github.com/tianocore/edk2-platforms.git edk2-platforms
+
+    - name: Check out latest EDK2 Non-OSI
+      run: |
+        git clone --recursive https://github.com/tianocore/edk2-non-osi.git edk2-non-osi
+        
     - name: Set version
       id: set_version
       working-directory: edk2
